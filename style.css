@@ -4,7 +4,6 @@ body {
     letter-spacing: -0.2px;
     color: #1B1C21;
     background-color: #F2F2F2;
-    box-sizing: border-box;
     margin: 30px;
     display: flex;
     justify-content: center;
@@ -14,7 +13,6 @@ body {
     min-width: 330px;
     max-width: 1200px;
     background-color: #F8F8F8;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
@@ -29,70 +27,68 @@ body {
 .header_block {
     margin-top: 20px;
     justify-content: center;
-    align-content: space-between;
-}
-
-.border_left_decor {
-    height: 40px;
-    width: 3px;
-    background-color: #41F6D7;
-    margin-right: 40px;
 }
 
 h1 {
     margin:0;
-    padding:0;
+    padding:0 40px;
     height: 40px;
     font-size: 28px;
     font-weight: bold;
     line-height: 40px;
     letter-spacing: -0.6px;
+    white-space: nowrap;
     flex-grow: 1;
+    border-left: 3px solid #41F6D7;
+}
+
+.icon_repair,
+.icon_checkstatus {
+    width: 200px;
+    padding-right: 60px;
 }
 
 .icon_repair {
     background: url("img/repair.svg") 90% 50% no-repeat;
-    padding-right: 65px;
-    margin-left: 40px;
 }
 
 .icon_checkstatus {
     background: url("img/checkstatus.svg") 90% 50% no-repeat;
-    padding-right: 65px;
 }
 
 /* nav block */
 .menu {
     margin: 10px 32px;
-    justify-content: flex-start;
 }
+
 .menu .btn {
-    margin: 0 10px;
-    height: 40px;
+    margin: 0;
+    padding: 0 15px;
     color: #7E7E82;
-    font-size: 16px;
 }
 
 .btn {
     border: none;
     cursor: pointer;
-    font-size: 16px;
     line-height: 24px;
+    font-size: 16px;
     height: 40px;
     background-color: transparent;
 }
 
 .btn_active {
-    padding: 0 24px;
     border: 2px solid #B8FFEC;
     border-radius: 6px;
     background: #FFFFFF;
 }
 
+.btn:focus {
+    outline: none !important;
+}
+
 /* content block */
 .content_block {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap-reverse;
     margin: 10px 40px;
 }
@@ -106,10 +102,10 @@ h1 {
 }
 
 .text_block {
-    margin-right:30px;
+    margin-right: 30px;
     font-size: 14px;
     line-height: 20px;
-    flex-basis: 400px;
+    flex-basis: 300px;
 }
 
 .icon_readmore {
@@ -118,12 +114,31 @@ h1 {
 }
 
 @media screen and (max-width: 500px) {
-    .icon_checkstatus{
-        margin-left: 65px;
-        margin-top: 10px;
+
+    .layout_flex {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
     }
-    .icon_repair {
-        margin-left: 60px;
-        margin-top: 10px;
+
+    .header_block{
+        justify-content: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .icon_repair,
+    .icon_checkstatus {
+        align-self: center;
+        margin-top: 5px;
+    }
+
+    .content_block.layout_flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
     }
 }
