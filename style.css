@@ -42,18 +42,33 @@ h1 {
     border-left: 3px solid #41F6D7;
 }
 
-.icon_repair,
-.icon_checkstatus {
-    width: 200px;
-    padding-right: 60px;
+.btn {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.icon_background {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    background-color: #FF3E79;
+    border-radius: 50%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
 }
 
 .icon_repair {
-    background: url("img/repair.svg") 90% 50% no-repeat;
+    background-image: url("img/icon_repair.svg");
 }
 
 .icon_checkstatus {
-    background: url("img/checkstatus.svg") 90% 50% no-repeat;
+    background-image: url("img/icon_checkstatus.svg");
 }
 
 /* nav block */
@@ -88,20 +103,6 @@ h1 {
     background: #FFFFFF;
 }
 
-.btn {
-    border: none;
-    cursor: pointer;
-    line-height: 24px;
-    font-size: 16px;
-    height: 40px;
-    background-color: transparent;
-}
-
-.btn:focus{
-    outline: none !important;
-}
-
-
 /* content block */
 .content_block {
     display: flex;
@@ -109,7 +110,8 @@ h1 {
     margin: 10px 34px;
 }
 
-.content_block > * {
+.content_block .text_block,
+.content_block .img_block {
     flex: 1 1 400px;
 }
 
@@ -146,10 +148,8 @@ h1 {
         text-align: center;
     }
 
-    .icon_repair,
-    .icon_checkstatus {
-        align-self: center;
-        margin-top: 5px;
+    .header_block .btn {
+        margin-bottom: 10px;
     }
 
     .content_block.layout_flex {
