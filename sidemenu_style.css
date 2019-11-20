@@ -1,0 +1,154 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "TT Lakes";
+    font-size: 16px;
+    padding:0;
+    margin:0;
+}
+
+.sideblock {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 100%;
+    min-height: 100%;
+    background-color: #ffffff;
+    box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2);
+}
+
+.sideblock_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 24px;
+}
+
+.sideblock_footer {
+    margin: 32px 24px;
+}
+
+.sideblock_header div {
+    display: inline-block;
+}
+
+.sideblock_header:last-child {
+    flex-grow: 1;
+}
+
+.sideblock_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding:0;
+    margin:0;
+    flex-grow: 1;
+}
+
+.sideblock_menu ul {
+    list-style: none;
+    margin: 32px 0 0 0;
+    padding: 0;
+}
+
+.sideblock_menu li {
+    display: block;
+    width: 100%;
+}
+
+.sideblock_menu a {
+    display: block;
+    padding: 8px 24px;
+    letter-spacing: -0.2px;
+    color: #1B1C21;
+    text-decoration: none;
+}
+
+.sideblock_menu ul > .active > a {
+    padding-left: 20px;
+    color: #7E7E82;
+    border-left: 4px solid #41F6D7;
+}
+
+.sideblock_icons{
+    margin: 16px 0;
+}
+
+.icon_background {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #FF3E79;
+    border-radius: 50%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: none;
+    transition-property: background-color, border-radius;
+    transition-duration: 0.5s;
+}
+
+button.icon_background:hover {
+    transition-property: background-color, border-radius;
+    transition-duration:  0.5s;
+    background-color: #41F6D7;
+    border-radius: 20%;
+}
+
+.icon_cross {
+    background-image: url("img/icon_cross.svg");
+}
+
+.sideblock_icons > .icon_background{
+    margin-right: 16px;
+}
+
+.icon_search {
+    background-image: url("img/icon_search.svg");
+}
+
+.icon_phone {
+    background-image: url("img/icon_phone.svg");
+}
+
+.icon_chat {
+    background-image: url("img/icon_chat.svg");
+}
+
+.icon_profile {
+    background-image: url("img/icon_profile.svg");
+}
+
+.mail_link a:link,
+.mail_link a:visited,
+.mail_link a:hover,
+.mail_link a:active {
+    color: #1B1C21;
+}
+
+.phone_num {
+    margin-top: 12px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+}
+.sideblock_footer_lang {
+    margin-top: 40px;
+}
+
+.sideblock_footer_lang div {
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.sideblock_footer_lang a {
+    text-decoration: none;
+    color: #1B1C21;
+}
+
+.sideblock_footer_lang > .active > a {
+    text-decoration: none;
+    color: #7E7E82;
+}
