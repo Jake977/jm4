@@ -1,0 +1,164 @@
+html, body {
+    font-family: "TT Lakes";
+    font-size: 16px;
+    padding:0;
+    margin: 40px 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F2F2F2;
+}
+
+.brands_block {
+    background-color: #F8F8F8;
+    max-width: 1120px;
+    min-width: 300px;
+}
+
+.brands_block_header {
+    display: flex;
+    flex-direction: row;
+    min-height: 56px;
+    border-top: 1px solid #D9FFF5;
+    background: linear-gradient(90deg, #F8F8F8 0%, #FFFFFF 100%);
+    text-transform: uppercase;
+    padding: 16px 0 16px 32px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: normal;
+    padding:0;
+    margin:0;
+    line-height: 24px;
+    height: 24px;
+    letter-spacing: -0.2px;
+    box-sizing: border-box;
+}
+
+.all_brands_logos {
+    display: inline-flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 24px;
+    margin-bottom: 8px;
+}
+
+.show {
+    display: inline-flex;
+    overflow: auto;
+    transition-property: height;
+    transition-duration: 1s;
+}
+
+.show2 {
+    display: block !important;
+    transition-duration: 1s;
+}
+
+.brand_item {
+    position: relative;
+    margin: 16px 24px 0 0;
+    height: 72px;
+    min-width: 210px;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.brand_logo {
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    flex-grow: 1;
+}
+
+.brand_logo img,
+.brand_logo::after {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.brand_logo::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 43%;
+    right: 35px;
+    border-right: 3px solid #FF3E79;
+    border-top: 3px solid #FF3E79;
+    transform: rotate(45deg);
+}
+
+.brand_logo::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #FF3E79;
+    border-radius: 50%;
+    right: 17px;
+}
+
+.brands_block .btn_show_hide {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    background-color: transparent;
+    margin-left: 24px;
+}
+
+.icon_arrows_down {
+    background: url("img/icon_arrows_down.svg") 5% 50% no-repeat;
+    padding: 0 32px;
+}
+
+.icon_arrows_up {
+    background: url("img/icon_arrows_up.svg") 15% 50% no-repeat;
+    padding: 0 32px;
+}
+
+@media screen and (max-width: 1820px) {
+    .brand_item:nth-child(1n+9) {
+        display:none;
+    }
+}
+
+@media screen and (max-width: 983px) {
+    .brand_item:nth-child(1n+7) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    .brand_item:nth-child(1n+5) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 516px) {
+    .brand_item:nth-child(1n+3) {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .brands_block_header {
+        min-height: 70px;
+    }
+
+}
+
