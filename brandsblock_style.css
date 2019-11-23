@@ -41,32 +41,33 @@ h1 {
 }
 
 .all_brands_logos {
-    display: inline-flex;
-    justify-content: space-between;
-    align-content: flex-start;
+    display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
     flex-wrap: wrap;
-    padding: 0 24px;
-    margin-bottom: 8px;
+    padding: 14px 14px 0;
+}
+
+.all_brands_logos::after {
+    content: "";
+    flex: auto;
+    margin: 0 10px 16px;
 }
 
 .show {
-    display: inline-flex;
-    overflow: auto;
-    transition-property: height;
-    transition-duration: 1s;
-}
-
-.show2 {
     display: block !important;
-    transition-duration: 1s;
+}
+.hide {
+    display: none;
 }
 
 .brand_item {
     position: relative;
-    margin: 16px 24px 0 0;
+    margin: 0 10px 16px;
     height: 72px;
-    min-width: 210px;
+    width: 20%;
+    min-width: 215px;
     padding: 5px 20px;
     box-sizing: border-box;
     flex-grow: 1;
@@ -126,39 +127,57 @@ h1 {
 }
 
 .icon_arrows_up {
-    background: url("img/icon_arrows_up.svg") 15% 50% no-repeat;
+    background: url("img/icon_arrows_up.svg") 5% 50% no-repeat;
     padding: 0 32px;
 }
 
-@media screen and (max-width: 1820px) {
+@media screen and (min-width: 968px) {
     .brand_item:nth-child(1n+9) {
-        display:none;
+        display: none;
+    }
+    .all_brands_logos::after {
+        width: 70%;
     }
 }
 
-@media screen and (max-width: 983px) {
+@media screen and (min-width: 733px) and (max-width: 967px) {
     .brand_item:nth-child(1n+7) {
         display: none;
     }
+
+    .all_brands_logos::after {
+        width: 54%;
+    }
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (min-width: 498px) and (max-width: 732px) {
     .brand_item:nth-child(1n+5) {
         display: none;
     }
+    .all_brands_logos::after {
+        min-width: 215px;
+        width: 47%;
+        flex-grow: 0;
+    }
 }
 
-@media screen and (max-width: 516px) {
+@media screen and (min-width: 370px) and (max-width: 497px) {
     .brand_item:nth-child(1n+3) {
         display: none;
     }
-
+    .all_brands_logos::after {
+        display: none;
+    }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 0px) and (max-width: 369px) {
+    .brand_item:nth-child(1n+3) {
+        display: none;
+    }
+    .all_brands_logos::after {
+        display: none;
+    }
     .brands_block_header {
         min-height: 70px;
     }
-
 }
-
