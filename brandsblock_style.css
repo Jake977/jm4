@@ -95,7 +95,10 @@ html, body {
 }
 
 .brand_logo {
-    background: url("img/go_arrow.svg") 90% 50% no-repeat;
+    background-image: url("img/go_arrow.svg");
+    background-position: 90% 50%;
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
 }
 
 .icon_arrows_down {
