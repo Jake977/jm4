@@ -1,29 +1,19 @@
 let toggleButton = document.querySelector('.btn_show_hide');
 let brandsCollection = document.querySelector('.all_brands_logos');
 let allblocks = brandsCollection.querySelectorAll('.brand_item');
-let toggle = "hide";
 
 toggleButton.addEventListener('click', function(){
 
-    if (toggle === 'hide') {
+    for (let i = 0; i < allblocks.length; i++) {
+        allblocks[i].classList.toggle('show');
+    }
 
-        for (let i = 0; i < allblocks.length; i++) {
-            allblocks[i].classList.add('show');
-        }
+    toggleButton.classList.toggle('icon_arrows_up');
+    toggleButton.classList.toggle('icon_arrows_down');
 
-        toggle = 'show';
-        toggleButton.textContent = "Cкрыть";
-        toggleButton.classList.remove('icon_arrows_down');
-        toggleButton.classList.add('icon_arrows_up');
-    } else {
-
-        for (let i = 0; i < allblocks.length; i++) {
-            allblocks[i].classList.remove('show');
-        }
-
-        toggle = 'hide';
+    if (toggleButton.textContent === 'Cкрыть') {
         toggleButton.textContent = "Показать все";
-        toggleButton.classList.remove('icon_arrows_up');
-        toggleButton.classList.add('icon_arrows_down');
+    } else {
+        toggleButton.textContent = "Cкрыть";
     }
 })
