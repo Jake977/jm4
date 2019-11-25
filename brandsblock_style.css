@@ -47,23 +47,21 @@ html, body {
     align-content: flex-start;
     flex-wrap: wrap;
     padding: 14px 14px 0;
+    overflow: hidden;
 }
 
-.all_brands_logos::after {
-    content: "";
-    flex: auto;
-    margin: 0 10px 16px;
+.overflow_hide {
+    max-height: 175px;
 }
 
-.show {
-    display: block !important;
-}
-.hide {
-    display: none;
+.all_brands_logos > a {
+    display: block;
 }
 
-.brand_item {
+.brand_item,
+.placeholder_div {
     position: relative;
+    display: inline-flex;
     margin: 0 10px 16px;
     height: 72px;
     width: 20%;
@@ -77,38 +75,13 @@ html, body {
     background: #FFFFFF;
     border: 1px solid #EAEAEA;
     border-radius: 6px;
-    flex-grow: 1;
 }
 
 .brand_logo img,
 .brand_logo::after {
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-}
-
-.brand_logo::before {
-    content: "";
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    top: 43%;
-    right: 35px;
-    border-right: 3px solid #FF3E79;
-    border-top: 3px solid #FF3E79;
-    transform: rotate(45deg);
-}
-
-.brand_logo::after {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #FF3E79;
-    border-radius: 50%;
-    right: 17px;
 }
 
 .brands_block .btn_show_hide {
@@ -121,6 +94,10 @@ html, body {
     margin-left: 24px;
 }
 
+.brand_logo {
+    background: url("img/go_arrow.svg") 90% 50% no-repeat;
+}
+
 .icon_arrows_down {
     background: url("img/icon_arrows_down.svg") 5% 50% no-repeat;
     padding: 0 32px;
@@ -131,53 +108,43 @@ html, body {
     padding: 0 32px;
 }
 
+.textHide,
+.textShowall {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 @media screen and (min-width: 968px) {
-    .brand_item:nth-child(1n+9) {
-        display: none;
-    }
-    .all_brands_logos::after {
-        width: 70%;
-    }
+
 }
 
 @media screen and (min-width: 733px) and (max-width: 967px) {
-    .brand_item:nth-child(1n+7) {
-        display: none;
-    }
-
-    .all_brands_logos::after {
-        width: 54%;
+    .placeholder_div:last-child {
+        display:none;
     }
 }
 
 @media screen and (min-width: 498px) and (max-width: 732px) {
-    .brand_item:nth-child(1n+5) {
-        display: none;
-    }
-    .all_brands_logos::after {
-        min-width: 215px;
-        width: 47%;
-        flex-grow: 0;
+    .placeholder_div:nth-child(2n) {
+        display:none;
     }
 }
 
 @media screen and (min-width: 370px) and (max-width: 497px) {
-    .brand_item:nth-child(1n+3) {
-        display: none;
-    }
-    .all_brands_logos::after {
-        display: none;
+    .placeholder_div:nth-of-type(1n) {
+        display:none;
     }
 }
 
 @media screen and (min-width: 0px) and (max-width: 369px) {
-    .brand_item:nth-child(1n+3) {
-        display: none;
-    }
-    .all_brands_logos::after {
-        display: none;
+    .placeholder_div:nth-of-type(1n) {
+        display:none;
     }
     .brands_block_header {
         min-height: 70px;
     }
 }
+
