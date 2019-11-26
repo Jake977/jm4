@@ -23,7 +23,7 @@ html, body {
     flex-direction: row;
     min-height: 56px;
     border-top: 1px solid #D9FFF5;
-    background: linear-gradient (90deg, #F8F8F8 0%, #FFFFFF 100%);
+    background: linear-gradient(90deg, #F8F8F8 0%, #FFFFFF 100%);
     text-transform: uppercase;
     padding: 16px 0 16px 32px;
     box-sizing: border-box;
@@ -102,6 +102,21 @@ html, body {
     margin-left: 24px;
 }
 
+.icon_arrows_up:hover,
+.icon_arrows_down:hover {
+    background-position: 5% 50%;
+    animation-name: movearrow;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+
+@keyframes movearrow {
+    0% {background-position: 5% 40%;}
+    100% {background-position: 5% 60%;}
+}
+
 .brand_logo {
     background-image: url("img/go_arrow.svg");
     background-position: 90% 50%;
@@ -111,11 +126,13 @@ html, body {
 
 .icon_arrows_down {
     background: url("img/icon_arrows_down.svg") 5% 50% no-repeat;
+    transition: background-position, 0.3s ease;
     padding: 0 32px;
 }
 
 .icon_arrows_up {
     background: url("img/icon_arrows_up.svg") 5% 50% no-repeat;
+    transition: background-position, 0.3s ease;
     padding: 0 32px;
 }
 
@@ -144,13 +161,13 @@ html, body {
     }
 }
 
-@media screen and (min-width: 370px) and (max-width: 497px) {
+@media screen and (min-width: 373px) and (max-width: 497px) {
     .placeholder_div:nth-of-type(1n) {
         display: none;
     }
 }
 
-@media screen and (min-width: 0px) and (max-width: 369px) {
+@media screen and (min-width: 0px) and (max-width: 372px) {
     .placeholder_div:nth-of-type(1n) {
         display: none;
     }
